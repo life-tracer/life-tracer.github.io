@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeTracer</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f4f8, #cfe0e8);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        img {
+            width: 100px;
+            margin-right: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #1a3d6d, #4c8ddb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+        }
+        nav {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        li {
+            background: #1a3d6d;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: scale(1.05);
+        }
+        a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
+        p {
+            max-width: 800px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        #abstract {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+            border-left: 5px solid #1a3d6d;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        .authors-section {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+        }
+        .authors-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .author {
+            font-weight: 500;
+            color: #1a3d6d;
+        }
+        .affiliations {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .footnotes {
+            font-size: 0.8rem;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+        }
+        sup {
+            font-size: 0.75em;
+        }
+        .server-note {
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-left: 5px solid #4c8ddb;
+            margin: 30px auto;
+            max-width: 800px;
+            font-size: 0.9rem;
+        }
+        .server-note pre {
+            background-color: #1a3d6d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .server-note strong {
+            color: #1a3d6d;
+        }
+    </style>
+</head>
+<body>
+    <div class="server-note">
+        <p><strong>Note:</strong> To use the Online Sample Classification feature, you'll need to serve this website using a local HTTP server:</p>
+        <pre>
+# Navigate to the website directory
+cd path/to/LT_Website
+
+# Start Python's built-in HTTP server
+python -m http.server
+
+# Then visit http://localhost:8000 in your browser
+        </pre>
+    </div>
+
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>LifeTracer</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="OnlineSampleClassifier.html">Online Sample Classification</a></li>
+            <li><a href="peaks.html">Peaks</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="feature_groups.html">Feature Groups</a></li>
+            <li><a href="3d_plots_peaks_interactive.html">Interactive 3D Peaks</a></li>
+            <li><a href="3d_plots_features_interactive.html">Interactive 3D Features</a></li>
+        </ul>
+    </nav>
+    
+    <div class="authors-section">
+        <div class="authors-list">
+            <span class="author">Daniel Saeedi<sup>1†</sup>,</span>
+            <span class="author">Denise Buckner<sup>2†</sup>,</span>
+            <span class="author">Thomas Walton<sup>1</sup>,</span>
+            <span class="author">José C. Aponte<sup>2*</sup>,</span>
+            <span class="author">Amirali Aghazadeh<sup>1*</sup></span>
+        </div>
+        <div class="affiliations">
+            <div><sup>1</sup>School of Electrical and Computer Engineering, Georgia Institute of Technology</div>
+            <div><sup>2</sup>NASA Goddard Space Flight Center (GSFC)</div>
+        </div>
+        <div class="footnotes">
+            <div><sup>*</sup>Corresponding authors. Email: jose.c.aponte@nasa.gov, amiralia@gatech.edu</div>
+            <div><sup>†</sup>These authors contributed equally to this work.</div>
+        </div>
+    </div>
+    
+    <p id="abstract">With the upcoming sample return missions to the Solar System where traces of past, extinct, or present life may be found, there is an urgent need to develop unbiased methods that can distinguish molecular distributions of organic compounds synthesized abiotically from those produced biotically but were subsequently altered through diagenetic processes. We conducted untargeted analyses on a collection of meteorite and terrestrial geologic samples using two-dimensional gas chromatography coupled with high-resolution time-of-flight mass spectrometry (GC×GC-HRTOF-MS) and compared their soluble non-polar and semi-polar organic species. To deconvolute the resulting large dataset, we developed LifeTracer, a computational framework for processing and downstream machine learning analysis of mass spectrometry data. LifeTracer identified predictive molecular features that distinguish abiotic from biotic origins and enabled a robust classification of meteorites from terrestrial samples based on the composition of their non-polar soluble organics.</p>
+</body>
+</html>
