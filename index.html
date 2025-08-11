@@ -6,6 +6,7 @@
     <title>LifeTracer</title>
     <link rel="icon" href="favicon-96x96.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -18,34 +19,38 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px 20px;
+            position: relative;
         }
         header {
             display: flex;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 0;
         }
         img {
             width: 100px;
             margin-right: 20px;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(45deg, #1a3d6d, #4c8ddb);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             text-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+            margin: 0;
         }
         nav {
-            margin-top: 20px;
+            margin-top: 15px;
         }
         ul {
             list-style-type: none;
             padding: 0;
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         li {
             background: #1a3d6d;
@@ -57,30 +62,33 @@
         }
         a {
             display: block;
-            padding: 10px 20px;
+            padding: 8px 15px;
             text-decoration: none;
             color: #fff;
             font-weight: 500;
+            font-size: 0.9rem;
         }
         p {
             max-width: 800px;
-            margin-top: 30px;
-            font-size: 1.1rem;
+            margin-top: 15px;
+            font-size: 1rem;
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         #abstract {
             background-color: white;
             border-radius: 10px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: justify;
             border-left: 5px solid #1a3d6d;
             font-style: italic;
-            margin-top: 30px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
         .authors-section {
-            margin-top: 30px;
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -90,20 +98,21 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
         }
         .author {
             font-weight: 500;
             color: #1a3d6d;
         }
         .affiliations {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .footnotes {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-align: center;
             font-style: italic;
             color: #555;
@@ -135,9 +144,46 @@
         .server-note strong {
             color: #1a3d6d;
         }
+        .github-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #333, #555);
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+            z-index: 10;
+        }
+        .github-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #24292e, #444);
+            border-color: #4c8ddb;
+        }
+        .github-button svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
     </style>
 </head>
 <body>
+    <a href="https://github.com/amirgroup-codes/LifeTracer" target="_blank" class="github-button">
+        <svg viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        View Code on GitHub
+    </a>
+
     <div class="server-note">
         <p><strong>Note:</strong> To use the Online Sample Classification feature, you'll need to serve this website using a local HTTP server:</p>
         <pre>
