@@ -6,6 +6,7 @@
     <title>LifeTracer</title>
     <link rel="icon" href="favicon-96x96.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
         body {
@@ -116,6 +117,89 @@
             text-align: center;
             font-style: italic;
             color: #555;
+        }
+        
+        /* Interactive Tools - Horizontal Layout */
+        .tools-section {
+            margin-top: 15px;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            flex: 0 1 calc(33.333% - 10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 6px 20px rgba(26, 61, 109, 0.15);
+            border-color: rgba(76, 141, 219, 0.3);
+        }
+
+        .tool-card i {
+            font-size: 2rem;
+            color: #4c8ddb;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tool-card h4 {
+            color: #1a3d6d;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .tool-card a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .tool-card p {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.3;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #666;
+        }
+        
+        footer p {
+            margin: 5px 0;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: #1a3d6d;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #4c8ddb;
+            text-decoration: underline;
         }
         sup {
             font-size: 0.75em;
@@ -278,16 +362,52 @@ python -m http.server
         <img src="logo.png" alt="Logo">
         <h1>LifeTracer</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="OnlineSampleClassifier.html">Online Sample Classification</a></li>
-            <li><a href="peaks.html">Peaks</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="feature_groups.html">Feature Groups</a></li>
-            <li><a href="3d_plots_peaks_interactive.html">Interactive 3D Peaks</a></li>
-            <li><a href="3d_plots_features_interactive.html">Interactive 3D Features</a></li>
-        </ul>
-    </nav>
+    <div class="tools-section">
+        <div class="tools-grid">
+            <div class="tool-card">
+                <a href="OnlineSampleClassifier.html">
+                    <i class="fas fa-microscope"></i>
+                    <h4>Sample Classifier</h4>
+                    <p>Classify your samples using our trained machine learning model</p>
+                </a>
+            </div>
+            <div class="tool-card">
+                <a href="peaks.html">
+                    <i class="fas fa-mountain"></i>
+                    <h4>Peaks Explorer</h4>
+                    <p>Explore detected peaks in the mass spectrometry data</p>
+                </a>
+            </div>
+            <div class="tool-card">
+                <a href="features.html">
+                    <i class="fas fa-list"></i>
+                    <h4>Features Browser</h4>
+                    <p>Browse identified molecular features across samples</p>
+                </a>
+            </div>
+            <div class="tool-card">
+                <a href="feature_groups.html">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>Feature Groups</h4>
+                    <p>Analyze grouped features representing compound families</p>
+                </a>
+            </div>
+            <div class="tool-card">
+                <a href="3d_plots_peaks_interactive.html">
+                    <i class="fas fa-cube"></i>
+                    <h4>3D Peak Visualization</h4>
+                    <p>Interactive 3D visualization of peak distributions</p>
+                </a>
+            </div>
+            <div class="tool-card">
+                <a href="3d_plots_features_interactive.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>3D Feature Plots</h4>
+                    <p>Explore features in three-dimensional space</p>
+                </a>
+            </div>
+        </div>
+    </div>
     
     <div class="authors-section">
         <div class="authors-list">
@@ -308,5 +428,11 @@ python -m http.server
     </div>
     
     <p id="abstract">With the upcoming sample return missions to the Solar System where traces of past, extinct, or present life may be found, there is an urgent need to develop unbiased methods that can distinguish molecular distributions of organic compounds synthesized abiotically from those produced biotically but were subsequently altered through diagenetic processes. We conducted untargeted analyses on a collection of meteorite and terrestrial geologic samples using two-dimensional gas chromatography coupled with high-resolution time-of-flight mass spectrometry (GC×GC-HRTOF-MS) and compared their soluble non-polar and semi-polar organic species. To deconvolute the resulting large dataset, we developed LifeTracer, a computational framework for processing and downstream machine learning analysis of mass spectrometry data. LifeTracer identified predictive molecular features that distinguish abiotic from biotic origins and enabled a robust classification of meteorites from terrestrial samples based on the composition of their non-polar soluble organics.</p>
+    
+    <footer>
+        <p>&copy; 2025 LifeTracer Research Team</p>
+        <p>Licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+        <p>Georgia Institute of Technology • NASA Goddard Space Flight Center</p>
+    </footer>
 </body>
 </html>
